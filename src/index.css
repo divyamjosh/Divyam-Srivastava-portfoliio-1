@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans relative overflow-x-hidden;
+  }
+  
+  /* Global noise texture overlay for tactile depth */
+  body::before {
+    content: "";
+    @apply pointer-events-none fixed inset-0 z-[100] opacity-[0.025] mix-blend-multiply bg-noise;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
